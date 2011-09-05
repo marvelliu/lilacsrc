@@ -1,0 +1,1 @@
+./configure --prefix=/opt/lilachome --enable-site=lilac --with-www --with-php=/usr/include/php --with-mysql --enable-ssh --enable-ssl

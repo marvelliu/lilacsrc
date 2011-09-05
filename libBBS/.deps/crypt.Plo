@@ -1,0 +1,1 @@
+crypt.lo crypt.o: crypt.c
