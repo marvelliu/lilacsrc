@@ -53,7 +53,7 @@ bin_PROGRAMS = poststat$(EXEEXT) static$(EXEEXT) usage$(EXEEXT) \
 	post_buse$(EXEEXT) newpoststat$(EXEEXT) genbplot$(EXEEXT) \
 	sync_mailsize$(EXEEXT) refresh_reply$(EXEEXT) \
 	fix_sysop$(EXEEXT) test$(EXEEXT) calculate_scores$(EXEEXT) \
-	boardhot$(EXEEXT)
+	boardhot$(EXEEXT) view_user$(EXEEXT)
 EXTRA_PROGRAMS =
 subdir = local_utl
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
@@ -249,6 +249,10 @@ usage_SOURCES = usage.c
 usage_OBJECTS = usage.$(OBJEXT)
 usage_LDADD = $(LDADD)
 usage_DEPENDENCIES =
+view_user_SOURCES = view_user.c
+view_user_OBJECTS = view_user.$(OBJEXT)
+view_user_LDADD = $(LDADD)
+view_user_DEPENDENCIES =
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -268,7 +272,7 @@ SOURCES = Bhtml.c Xhtml.c alluserlog.c autoclear.c autoundeny.c \
 	process_invalid_mail.c rebuild_digest.c refresh_reply.c \
 	scanIP.c scanMODE.c showBM.c showipdeny.c statBM.c statguy.c \
 	static.c sync_mailsize.c test.c ulevel.c ultimate_search.c \
-	uonlinelog.c usage.c
+	uonlinelog.c usage.c view_user.c
 DIST_SOURCES = Bhtml.c Xhtml.c alluserlog.c autoclear.c autoundeny.c \
 	blogstat.c bmerge.c boardhot.c bonlinelog.c calculate_scores.c \
 	dayuserlog.c dump_user_title.c find_rm_lost.c fix_sysop.c \
@@ -278,7 +282,7 @@ DIST_SOURCES = Bhtml.c Xhtml.c alluserlog.c autoclear.c autoundeny.c \
 	process_invalid_mail.c rebuild_digest.c refresh_reply.c \
 	scanIP.c scanMODE.c showBM.c showipdeny.c statBM.c statguy.c \
 	static.c sync_mailsize.c test.c ulevel.c ultimate_search.c \
-	uonlinelog.c usage.c
+	uonlinelog.c usage.c view_user.c
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -608,6 +612,9 @@ uonlinelog$(EXEEXT): $(uonlinelog_OBJECTS) $(uonlinelog_DEPENDENCIES)
 usage$(EXEEXT): $(usage_OBJECTS) $(usage_DEPENDENCIES) 
 	@rm -f usage$(EXEEXT)
 	$(LINK) $(usage_LDFLAGS) $(usage_OBJECTS) $(usage_LDADD) $(LIBS)
+view_user$(EXEEXT): $(view_user_OBJECTS) $(view_user_DEPENDENCIES) 
+	@rm -f view_user$(EXEEXT)
+	$(LINK) $(view_user_LDFLAGS) $(view_user_OBJECTS) $(view_user_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -660,6 +667,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ultimate_search.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/uonlinelog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/usage.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view_user.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

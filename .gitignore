@@ -1,0 +1,6 @@
+*.o
+*.lo
+config.log
+.libs
+autom4te.cache/*
+local_utl/Makefile.in
