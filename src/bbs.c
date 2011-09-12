@@ -5030,10 +5030,10 @@ const char *SR_BMitems[] = {
     "放入精华区",
     "放入暂存档",
     "设定拟删标记",
-    "设定不可回复"//,
+    "设定不可回复",
     "制作合集"
 };
-const int item_num = 7;
+const int item_num = 8;
 
 struct BMFunc_arg {
     bool delpostnum; /*是否减文章数*/

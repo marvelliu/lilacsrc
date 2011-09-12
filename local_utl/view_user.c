@@ -28,7 +28,15 @@ int main(int argc, char **argv){
     printf("email:%s\n", ud.email);
     printf("reg_email:%s\n", ud.reg_email);
 
-    fprintf(stdout,"\n%s\n","------------------------------------------");
+
+//    struct usermemo *memo;
+//    read_user_memo(userid, &memo);
+//    printf("email:%s\n", memo->ud.email);
+//    printf("reg_email:%s\n", memo->ud.reg_email);
+
+
+    printf("\n");
+
     return 0;
 }
 
